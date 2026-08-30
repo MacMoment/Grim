@@ -2,10 +2,17 @@
 
 enabled: false
 webhook: ""
+username: "MacCaughtYouCheating"
+# Optional HTTPS image displayed beside the webhook username.
+avatar-url: ""
 # Set to true to bypass Discord's webhook URL format validation.
 # This allows any valid HTTPS URL (useful for proxies or Matrix forwarders).
 disable-webhook-validation: false
-embed-title: "**Grim Alert**"
+# Connection tuning. Timeouts have a minimum of 1000ms; retries are clamped from 0 to 5.
+connect-timeout-ms: 10000
+request-timeout-ms: 30000
+max-retries: 2
+embed-title: "**MacCaughtYouCheating Alert**"
 embed-color: "#00FFFF"
 include-timestamp: true
 # Replaces backticks in values (like client brands) so they don't break Discord's text formatting.

@@ -4,52 +4,37 @@ import ac.grim.grimac.GrimAPI;
 import lombok.experimental.UtilityClass;
 import net.kyori.adventure.text.Component;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @UtilityClass
 public class LogUtil {
+    public void debug(final String message) {
+        log(Level.FINE, message, null);
+    }
+
     public void info(final String info) {
-        getLogger().info(info);
+        log(Level.INFO, info, null);
     }
 
     public void warn(final String warn) {
-        getLogger().warning(warn);
+        log(Level.WARNING, warn, null);
     }
 
-    @SuppressWarnings("CallToPrintStackTrace")
     public void warn(final String description, final Throwable throwable) {
-        Logger logger = getLogger();
-        if (logger != null) {
-            logger.warning(description + ": " + getStackTrace(throwable));
-        } else {
-            throwable.printStackTrace();
-        }
+        log(Level.WARNING, description, throwable);
     }
 
     public void error(final String error) {
-        getLogger().severe(error);
+        log(Level.SEVERE, error, null);
     }
 
-    @SuppressWarnings("CallToPrintStackTrace")
     public void error(final String description, final Throwable throwable) {
-        Logger logger = getLogger();
-        if (logger != null) {
-            logger.severe(description + ": " + getStackTrace(throwable));
-        } else {
-            throwable.printStackTrace();
-        }
+        log(Level.SEVERE, description, throwable);
     }
 
-    @SuppressWarnings("CallToPrintStackTrace")
     public void error(final Throwable throwable) {
-        Logger logger = getLogger();
-        if (logger != null) {
-            logger.severe(getStackTrace(throwable));
-        } else {
-            throwable.printStackTrace();
-        }
+        log(Level.SEVERE, throwable.getMessage(), throwable);
     }
 
     public Logger getLogger() {
@@ -64,16 +49,12 @@ public class LogUtil {
         GrimAPI.INSTANCE.getPlatformServer().getConsoleSender().sendMessage(info);
     }
 
-    private static String getStackTrace(Throwable throwable) {
-        String message = throwable.getMessage();
-        try (StringWriter sw = new StringWriter()) {
-            try (PrintWriter pw = new PrintWriter(sw)) {
-                throwable.printStackTrace(pw);
-                message = sw.toString();
-            }
-        } catch (Exception ignored) {
+    private static void log(Level level, String message, Throwable throwable) {
+        Logger logger = getLogger();
+        if (throwable == null) {
+            logger.log(level, message);
+        } else {
+            logger.log(level, message, throwable);
         }
-        return message;
     }
-
 }

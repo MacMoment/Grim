@@ -248,6 +248,7 @@ public class GrimExternalAPI implements GrimAbstractAPI, ConfigReloadObserver, S
         variableReplacements.putIfAbsent("%version%", GrimUser::getVersionName);
         // static variables
         staticReplacements.put("%prefix%", MessageUtil.translateAlternateColorCodes('&', GrimAPI.INSTANCE.getConfigManager().getPrefix()));
+        staticReplacements.putIfAbsent("%maccaughtyoucheating_version%", getGrimVersion());
         staticReplacements.putIfAbsent("%grim_version%", getGrimVersion());
     }
 }

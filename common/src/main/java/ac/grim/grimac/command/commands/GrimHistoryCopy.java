@@ -41,7 +41,7 @@ public class GrimHistoryCopy implements BuildableCommand {
     @Override
     public void register(CommandManager<Sender> commandManager, CloudPlatformCommandArguments arguments) {
         commandManager.command(
-                commandManager.commandBuilder("grim", "grimac")
+                commandManager.commandBuilder("maccaughtyoucheating", "mcyc")
                         .literal("history")
                         .literal("copy")
                         .permission("grim.history.copy")

@@ -54,7 +54,7 @@ public final class FabricResolverRegistrar {
     private GrimPlugin resolveMod(ModContainer modContainer) {
         return modContainerCache.computeIfAbsent(modContainer, container -> {
             net.fabricmc.loader.api.metadata.ModMetadata metadata = container.getMetadata();
-            String folderName = metadata.getId().equals("grimac") ? metadata.getName() : metadata.getId();
+            String folderName = metadata.getId().equals("maccaughtyoucheating") ? metadata.getName() : metadata.getId();
             return new BasicGrimPlugin(
                     JULoggerFactory.createLogger(metadata.getName()),
                     new File(FabricLoader.getInstance().getConfigDir().toFile(), folderName),
