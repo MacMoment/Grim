@@ -68,10 +68,10 @@ dependencies {
 }
 
 bukkit {
-    name = "GrimAC"
-    author = "GrimAC"
+    name = "MacCaughtYouCheating"
+    author = "MacMoment"
     main = "ac.grim.grimac.platform.bukkit.GrimACBukkitLoaderPlugin"
-    website = "https://grim.ac/"
+    website = "https://github.com/MacMoment/Grim"
     apiVersion = "1.13"
     foliaSupported = true
 

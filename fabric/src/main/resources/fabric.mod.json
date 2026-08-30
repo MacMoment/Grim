@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "grimac",
+  "id": "maccaughtyoucheating",
   "version": "${version}",
-  "name": "GrimAC",
-  "description": "GrimAC — Fabric meta-mod aggregator. Loads the intermediary or official variant by MC version range.",
+  "name": "MacCaughtYouCheating",
+  "description": "MacCaughtYouCheating Fabric meta-mod aggregator.",
   "license": "GPL-3.0",
   "environment": "*",
   "depends": {

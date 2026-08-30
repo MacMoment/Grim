@@ -77,10 +77,10 @@ public class CloudCommandService implements CommandService {
             Sender sender = context.context().sender();
             if (isHistoryInput(context.context().rawInput().input())) {
                 sender.sendMessage(Component.text("Invalid history syntax.", NamedTextColor.RED));
-                sender.sendMessage(Component.text("Use: /grim history <player> [page <N>]", NamedTextColor.GRAY));
-                sender.sendMessage(Component.text("Use: /grim history <player> session <N|latest> [page <N>] [-d] [-v]", NamedTextColor.GRAY));
-                sender.sendMessage(Component.text("Tip: /grim history <player> session shows filter and detail options.", NamedTextColor.GRAY));
-                sender.sendMessage(Component.text("Use /grim history player <player> ... for names that collide with history subcommands.", NamedTextColor.GRAY));
+                sender.sendMessage(Component.text("Use: /mcyc history <player> [page <N>]", NamedTextColor.GRAY));
+                sender.sendMessage(Component.text("Use: /mcyc history <player> session <N|latest> [page <N>] [-d] [-v]", NamedTextColor.GRAY));
+                sender.sendMessage(Component.text("Tip: /mcyc history <player> session shows filter and detail options.", NamedTextColor.GRAY));
+                sender.sendMessage(Component.text("Use /mcyc history player <player> ... for names that collide with history subcommands.", NamedTextColor.GRAY));
                 return;
             }
             sender.sendMessage(Component.text(context.exception().correctSyntax(), NamedTextColor.RED));
@@ -92,7 +92,7 @@ public class CloudCommandService implements CommandService {
         if (input.startsWith("/")) input = input.substring(1).strip();
         String[] tokens = input.toLowerCase(Locale.ROOT).split("\\s+");
         return tokens.length >= 2
-                && (tokens[0].equals("grim") || tokens[0].equals("grimac"))
+                && (tokens[0].equals("maccaughtyoucheating") || tokens[0].equals("mcyc"))
                 && (tokens[1].equals("history") || tokens[1].equals("hist"));
     }
 

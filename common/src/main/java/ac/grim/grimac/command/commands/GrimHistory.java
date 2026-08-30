@@ -83,7 +83,7 @@ public class GrimHistory implements BuildableCommand {
         SuggestionProvider<Sender> targetSuggestions = targetSuggestions(arguments);
 
         commandManager.command(
-                commandManager.commandBuilder("grim", "grimac")
+                commandManager.commandBuilder("maccaughtyoucheating", "mcyc")
                         .literal("history", "hist")
                         .literal("repair")
                         .literal("check-ids")
@@ -112,7 +112,7 @@ public class GrimHistory implements BuildableCommand {
             SuggestionProvider<Sender> violationPageSuggestions) {
         // Fresh builder per branch — reusing one cross-pollinates siblings.
         java.util.function.Supplier<Command.Builder<Sender>> base = () -> {
-            Command.Builder<Sender> b = commandManager.commandBuilder("grim", "grimac")
+            Command.Builder<Sender> b = commandManager.commandBuilder("maccaughtyoucheating", "mcyc")
                     .literal("history", "hist")
                     .permission("grim.history");
             if (withPlayerLiteral) b = b.literal("player");
