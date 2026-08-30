@@ -72,6 +72,16 @@ tasks {
         ) {
             expand(properties)
         }
+
+        filesMatching("**/*.yml") {
+            filter { line: String ->
+                line
+                    .replace("/grim", "/mcyc")
+                    .replace("GrimAC", "MacCaughtYouCheating")
+                    .replace("Grim's", "MacCaughtYouCheating's")
+                    .replace("Grim ", "MacCaughtYouCheating ")
+            }
+        }
     }
 
     javadoc {
